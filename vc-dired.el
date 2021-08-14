@@ -25,8 +25,10 @@
 
 ;; setup example
 
-;; (with-eval-after-load "vc"
-;;   (require 'vc-dired)
+;; (with-eval-after-load "vc-hooks"
+;;   (autoload 'vc-dired-do-register "vc-dired" nil t)
+;;   (autoload 'vc-dired-do-delete "vc-dired" nil t)
+;;   (autoload 'vc-dired-do-revert "vc-dired" nil t)
 ;;   (define-key vc-prefix-map "R" 'vc-dired-do-register)
 ;;   (define-key vc-prefix-map "X" 'vc-dired-do-delete)
 ;;   (define-key vc-prefix-map "U" 'vc-dired-do-revert))
