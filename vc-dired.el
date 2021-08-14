@@ -1,4 +1,4 @@
-;;; vc-dired.el --- run vc-command in dired buffer   -*- lexical-binding: t; -*-
+;;; vc-dired.el --- Execute some vc commands in the dired-mode buffer   -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2021  nilninull
 
@@ -20,7 +20,7 @@
 
 ;;; Commentary:
 
-;; Run vc command in dired buffer
+;; Execute some vc commands in the dired-mode buffer
 ;; You can use below commands to the under cursor file or marked files.
 
 ;; setup example
