@@ -47,10 +47,13 @@
        (error "Please run this command in dired-mode buffer"))))
 
 (vc-dired-define-cmd register
-		     (if (vc-registered file)
-			 (message "%s is already registered" file)
-		       (let ((backend (vc-backend-for-registration file)))
-			 (vc-register (list backend (list file))))))
+		     (cond ((vc-git-registered file)
+			    (vc-git-register (list file)))
+			   ((vc-registered file)
+			    (message "%s is already registered" file))
+			   (t
+			    (vc-register (list (vc-backend-for-registration file)
+					       (list file))))))
 
 (vc-dired-define-cmd delete (vc-delete-file file))
 
