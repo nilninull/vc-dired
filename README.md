@@ -1,9 +1,9 @@
 # vc-dired
-run some vc command in dired-mode buffer
+Execute some vc commands in the dired-mode buffer
 
 You can use below commands to the under cursor file or marked files.
 
-## setup example
+## Setup example
 ```emacs
 (with-eval-after-load "vc-hooks"
   (autoload 'vc-dired-do-register "vc-dired" nil t)
