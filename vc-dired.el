@@ -41,8 +41,10 @@
   `(defun ,(intern (format "vc-dired-do-%s" name)) ()
      "This function defined by `vc-dired-define-cmd' macro."
      (interactive)
-     (dolist (file (dired-get-marked-files))
-       ,@body)))
+     (if (derived-mode-p 'dired-mode)
+	 (dolist (file (dired-get-marked-files))
+	   ,@body)
+       (error "Please run this command in dired-mode buffer"))))
 
 (vc-dired-define-cmd register
 		     (if (vc-registered file)
