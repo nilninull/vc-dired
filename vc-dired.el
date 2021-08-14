@@ -34,6 +34,7 @@
 ;;   (define-key vc-prefix-map "U" 'vc-dired-do-revert))
 
 ;;; Code:
+(require 'vc)
 
 (defmacro vc-dired-define-cmd (name &rest body)
   ""
